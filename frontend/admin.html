@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#211e1a">
+<title>Administração | Imperio Cerimonial</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-role="admin" class="client-app admin-app">
+<div class="app pro-app-shell">
+  <header class="topbar pro-topbar">
+    <a class="brand pro-brand" href="inicio.html"><span class="pro-brand-mark">✦</span><span>Imperio <span>Cerimonial</span></span></a>
+    <div class="pro-topbar-center"><span class="pro-topbar-label">PAINEL ADMINISTRATIVO</span><span class="pro-topbar-divider"></span><span class="pro-topbar-date" id="adminToday"></span></div>
+    <div class="top-actions pro-top-actions"><div class="pro-user-meta"><strong data-user-name></strong><small>Conta administrativa</small></div><div class="avatar pro-avatar" data-avatar>?</div><button class="btn ghost pro-logout" data-logout><span>↪</span> Sair</button></div>
+  </header>
+  <div class="layout pro-layout">
+    <aside class="sidebar pro-sidebar">
+      <div class="pro-sidebar-intro"><span class="pro-sidebar-overline">GESTÃO IMPERIO</span><strong>Administração</strong><p>Organize eventos, equipe e propostas em um só lugar.</p></div>
+      <div class="pro-nav-group-label">MENU PRINCIPAL</div>
+      <nav class="pro-nav-list">
+        <button class="nav-btn active" data-admin-view="dashboard"><span class="pro-nav-icon">⌂</span><span>Visão geral</span><span class="pro-nav-arrow">›</span></button>
+        <button class="nav-btn" data-admin-view="calendar"><span class="pro-nav-icon">▦</span><span>Calendário</span></button>
+        <button class="nav-btn" data-admin-view="schedule"><span class="pro-nav-icon">✓</span><span>Montar equipe</span></button>
+        <button class="nav-btn" data-admin-view="events"><span class="pro-nav-icon">▤</span><span>Eventos</span></button>
+        <button class="nav-btn" data-admin-view="professionals"><span class="pro-nav-icon">♙</span><span>Profissionais</span></button>
+        <button class="nav-btn" data-admin-view="service-prices"><span class="pro-nav-icon">R$</span><span>Preços dos serviços</span></button>
+        <button class="nav-btn" data-admin-view="quotes"><span class="pro-nav-icon">R$</span><span>Orçamentos</span></button>
+        <button class="nav-btn" data-admin-view="plans"><span class="pro-nav-icon">✦</span><span>Planos</span></button>
+        <button class="nav-btn" data-admin-view="payouts"><span class="pro-nav-icon">↗</span><span>Repasses</span></button>
+      </nav>
+      <div class="pro-sidebar-help"><span class="pro-help-mark">?</span><div><strong>Suporte administrativo</strong><p>Precisa de ajuda com o painel?</p><a href="mailto:contato@imperiocerimonia.com.br">Fale com a equipe ↗</a></div></div>
+      <div class="pro-sidebar-foot"><span class="pro-foot-symbol">✦</span><span><strong>Imperio Cerimonial</strong><small>Excelência em cada evento</small></span></div>
+    </aside>
+    <main class="main pro-main" id="content"></main>
+  </div>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{const d=document.getElementById('adminToday');if(d)d.textContent=new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long'})});
+</script>
+</body>
+</html>

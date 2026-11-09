@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#171717">
+<title>Área profissional | Imperio Cerimonial</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-role="professional" class="professional-app">
+<div class="app pro-app-shell">
+  <header class="topbar pro-topbar">
+    <a class="brand pro-brand" href="inicio.html"><span class="pro-brand-mark">✦</span><span>Imperio <span>Cerimonial</span></span></a>
+    <div class="pro-topbar-center"><span class="pro-topbar-label">ESPAÇO DO PROFISSIONAL</span><span class="pro-topbar-divider"></span><span class="pro-topbar-date" id="proToday"></span></div>
+    <div class="top-actions pro-top-actions"><div class="pro-user-meta"><strong data-user-name></strong><small>Conta profissional</small></div><div class="avatar pro-avatar" data-avatar>?</div><button class="btn ghost pro-logout" data-logout><span>↪</span> Sair</button></div>
+  </header>
+  <div class="layout pro-layout">
+    <aside class="sidebar pro-sidebar">
+      <div class="pro-sidebar-intro"><span class="pro-sidebar-overline">ESPAÇO DE TRABALHO</span><strong>Seu painel</strong><p>Organize sua rotina e seus eventos.</p></div>
+      <div class="pro-nav-group-label">MENU PRINCIPAL</div>
+      <nav class="pro-nav-list">
+        <button class="nav-btn active" data-prof-view="dashboard"><span class="pro-nav-icon">⌂</span><span>Visão geral</span><span class="pro-nav-arrow">›</span></button>
+        <button class="nav-btn" data-prof-view="invitations"><span class="pro-nav-icon">✉</span><span>Convites de trabalho</span><span class="pro-nav-count" data-pro-pending-count>—</span></button>
+        <button class="nav-btn" data-prof-view="priority"><span class="pro-nav-icon">★</span><span>Prioridade na escala</span></button>
+        <button class="nav-btn" data-prof-view="availability"><span class="pro-nav-icon">▦</span><span>Disponibilidade</span></button>
+        <button class="nav-btn" data-prof-view="jobs"><span class="pro-nav-icon">▤</span><span>Meus trabalhos</span></button>
+        <button class="nav-btn" data-prof-view="payouts"><span class="pro-nav-icon">R$</span><span>Meus repasses</span></button>
+        <button class="nav-btn" data-prof-view="profile"><span class="pro-nav-icon">◎</span><span>Meu perfil</span></button>
+      </nav>
+      <div class="pro-sidebar-help"><span class="pro-help-mark">?</span><div><strong>Precisa de ajuda?</strong><p>Fale com a equipe da Imperio Cerimonial.</p><a href="mailto:contato@imperiocerimonia.com.br">Entrar em contato ↗</a></div></div>
+      <div class="pro-sidebar-foot"><span class="pro-foot-symbol">✦</span><span><strong>Imperio Cerimonial</strong><small>Excelência em cada evento</small></span></div>
+    </aside>
+    <main class="main pro-main" id="content"></main>
+  </div>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{const d=document.getElementById('proToday');if(d)d.textContent=new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long'});document.querySelectorAll('[data-prof-view]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-prof-view]').forEach(x=>x.classList.toggle('active',x===b))}))});
+</script>
+</body>
+</html>

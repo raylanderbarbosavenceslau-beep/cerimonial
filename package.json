@@ -1,0 +1,6 @@
+{
+  "name":"imperio-cerimonial",
+  "version":"1.0.0",
+  "scripts":{"start":"node --env-file-if-exists=.env backend/server.js"},
+  "dependencies":{"express":"^4.21.2"}
+}
